@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Typography,
@@ -8,6 +8,20 @@ import {
   IconButton,
 } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import WebFont from "webfontloader";
+
+ const emojiSet = [
+  "✨", "🔥", "💖", "⭐", "🎉", "💫", "🌈", "🦋", "🌟", "🌸", "💎",
+  "💥", "💞", "🖤", "🌻", "💐", "🎶", "🎀", "⚡", "🌹", "🌙", "💧"
+];
+
+const symbolSet = [
+  "★", "☆", "✿", "❀", "✦", "❣", "☯", "☮", "♕", "♛", "♡", "♥", "♠", "♣", "♟",
+  "(•‿•)", "(¬‿¬)", "(＾▽＾)", "ʕ•ᴥ•ʔ", "ツ", "(✿◠‿◠)", "ಠ‿ಠ", "ʘ‿ʘ", "(☞ﾟヮﾟ)☞", 
+  "☾", "☀", "❆", "⚝", "~", "♩", "♪", "♫", "✧", "∞", "✩"
+];
+const decorativeSet = [...emojiSet, ...symbolSet];
+
 
 export default function InstagramFonts() {
   const [text, setText] = useState("");
@@ -17,7 +31,72 @@ export default function InstagramFonts() {
     alert("Copied to clipboard!");
   };
 
-  const items = Array(4).fill(null);
+
+  const [fonts] = useState([
+      "Roboto",
+      "Stack Sans Notched",
+      "Momo Signature",
+      "Great Vibes",
+      "Indie Flower",
+      "Open Sans",
+      "Lato",
+      "Sixtyfour",
+      "Cabin Sketch",
+      "Amatic SC",
+      "Caveat",
+      "Shadows Into Light",
+      "Gloria Hallelujah",
+      "Patrick Hand",
+      "Rock Salt",
+      "Delius Swash Caps",
+      "Satisfy",
+      "Yellowtail",
+      "Courgette",
+      "Sacramento",
+      "Poppins",
+      "Montserrat",
+      "Raleway",
+      "Oswald",
+      "Playfair Display",
+      "Merriweather",
+      "Noto Sans",
+      "Nunito",
+      "Quicksand",
+      "Rubik",
+      "Josefin Sans",
+      "Inconsolata",
+      "Bebas Neue",
+      "Dancing Script",
+      "Pacifico",
+      "Ubuntu",
+      "Fira Sans",
+    ]);
+
+     useEffect(() => {
+    WebFont.load({
+      google: {
+        families: fonts,
+      },
+    });
+  }, [fonts]);
+
+const stylizeText = (font) => {
+  if (!text) return "Type something...";
+
+  // Convert text to array for easy insertion
+  const chars = text.split("");
+  const insertCount = Math.floor(Math.random() * 4) + 1; // 1–4 insertions
+
+  for (let i = 0; i < insertCount; i++) {
+    const symbol = decorativeSet[Math.floor(Math.random() * decorativeSet.length)];
+    const pos = Math.floor(Math.random() * (chars.length + 1)); // Random position
+    chars.splice(pos, 0, symbol);
+  }
+
+  return chars.join("");
+};
+
+  // const items = Array(4).fill(null);
 
   return (
     <Box
@@ -85,7 +164,69 @@ Use our Instagram font generator to level up your social media profiles. Copy an
           mb: 3,
         }}
       />
-      <Grid container 
+
+      <Grid container spacing={2} flexDirection={"column"} width={"100%"}>
+        {fonts.map((font, i) => {
+          const styledText = stylizeText(font);
+          return (
+            <Grid key={i} item xs={12} width={"100%"}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 2,
+                  borderRadius: 3,
+                  backgroundColor: "#fff8f0",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  cursor: "pointer",
+                  transition: "transform 0.2s ease",
+                  "&:hover": { transform: "translateY(-4px)" },
+                }}
+              >
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: font,
+                      fontSize: "1.3rem",
+                      paddingBottom: 1,
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    {styledText}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontFamily: "monospace" }}
+                  >
+                    {font}
+                  </Typography>
+                </Box>
+
+                <IconButton
+                  onClick={() => handleCopy(styledText)}
+                  size="small"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 0.5,
+                    borderRadius: "16px",
+                    padding: "4px 6px",
+                    backgroundColor: "#000",
+                    color: "#fff8e6",
+                    fontWeight: "700",
+                  }}
+                >
+                  Copy
+                  <ContentCopyIcon fontSize="small" />
+                </IconButton>
+              </Paper>
+            </Grid>
+          );
+        })}
+      </Grid>
+      {/* <Grid container 
         spacing={3}
         flexDirection={"column"}
         width={"100%"}
@@ -93,7 +234,7 @@ Use our Instagram font generator to level up your social media profiles. Copy an
         // alignItems={"center"}
         >
         
-        {items.map((_, i) => (
+        {fonts.map((font, i) => (
         //   <Grid item xs={12} sm={6} md={6} key={i}>
           <Grid size={{ xs: 12 }} key={i}  width={"100%"}>
             <Paper
@@ -137,7 +278,7 @@ Use our Instagram font generator to level up your social media profiles. Copy an
             </Paper>
           </Grid>
         ))}
-      </Grid>
+      </Grid> */}
     </Box>
   );
 }
