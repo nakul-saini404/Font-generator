@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Typography,
@@ -8,16 +8,94 @@ import {
   IconButton,
 } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import WebFont from "webfontloader";
+import axios from "axios";
 
 export default function AllFonts() {
   const [text, setText] = useState("");
+  // const [fonts, setFonts] = useState([]);
+  // const [loading, setLoading] = useState(true);
+
+
+  const [fonts] = useState([
+    "Roboto",
+    "Stack Sans Notched",
+    "Momo Signature",
+    "Great Vibes",
+    "Indie Flower",
+    "Open Sans",
+    "Lato",
+    "Sixtyfour",
+    "Cabin Sketch",
+    "Amatic SC",
+    "Caveat",
+    "Shadows Into Light",
+    "Gloria Hallelujah",
+    "Patrick Hand",
+    "Rock Salt",
+    "Delius Swash Caps",
+    "Satisfy",
+    "Yellowtail",
+    "Courgette",
+    "Sacramento",
+    "Poppins",
+    "Montserrat",
+    "Raleway",
+    "Oswald",
+    "Playfair Display",
+    "Merriweather",
+    "Noto Sans",
+    "Nunito",
+    "Quicksand",
+    "Rubik",
+    "Josefin Sans",
+    "Inconsolata",
+    "Bebas Neue",
+    "Dancing Script",
+    "Pacifico",
+    "Ubuntu",
+    "Fira Sans",
+  ]);
+
+
+   useEffect(() => {
+    WebFont.load({
+      google: {
+        families: fonts,
+      },
+    });
+  }, [fonts]);
+
+  //  useEffect(() => {
+  //   const fetchFonts = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         `https://www.googleapis.com/webfonts/v1/webfonts?key=YOUR_GOOGLE_FONTS_API_KEY`
+  //       );
+  //       const topFonts = res.data.items.slice(0, 10); // first 10 fonts
+  //       setFonts(topFonts);
+
+  //       // Load them dynamically
+  //       WebFont.load({
+  //         google: {
+  //           families: topFonts.map((f) => f.family),
+  //         },
+  //       });
+  //       setLoading(false);
+  //     } catch (err) {
+  //       console.error("Error fetching fonts:", err);
+  //     }
+  //   };
+
+  //   fetchFonts();
+  // }, []);
 
   const handleCopy = (fontText) => {
     navigator.clipboard.writeText(fontText);
     alert("Copied to clipboard!");
   };
 
-  const items = Array(4).fill(null);
+  // const items = Array(4).fill(null);
 
   return (
     <Box
@@ -92,7 +170,7 @@ export default function AllFonts() {
         // alignItems={"center"}
         >
         
-        {items.map((_, i) => (
+        {fonts.map((font, i) => (
         //   <Grid item xs={12} sm={6} md={6} key={i}>
           <Grid size={{ xs: 12 }} key={i}  width={"100%"}>
             <Paper
@@ -114,18 +192,20 @@ export default function AllFonts() {
                   wordWrap: "break-word",
                   fontSize: "1.2rem",
                   flex: 1,
+                  fontFamily: font,
                 }}
               >
-                {text || "generating_fancy_fonts..."}
+                {text || "Type something cool!"}
               </Typography>
                <Typography
                 sx={{
                   wordWrap: "break-word",
                   fontSize: "1rem",
                   flex: 1,
+                  fontFamily: font,
                 }}
               >
-                {text || "generating_fancy_fonts..."}
+                {font}
               </Typography>
                 </Box>
              

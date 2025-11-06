@@ -141,3 +141,126 @@ Use our Instagram font generator to level up your social media profiles. Copy an
     </Box>
   );
 }
+
+
+// import React, { useState, useEffect } from "react";
+// import {
+//   Container,
+//   TextField,
+//   Typography,
+//   Box,
+//   Paper,
+//   CircularProgress,
+// } from "@mui/material";
+
+// const emojiSet = ["✨", "🔥", "💖", "⭐", "🎉", "💫", "🌈", "🦋", "🌟", "🌸", "💎"];
+
+// // A few Unicode fancy style transformations
+// const fancyTransforms = [
+//   (txt) => txt.toUpperCase(),
+//   (txt) => txt.toLowerCase(),
+//   (txt) => txt.split("").map((c) => "🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉"["ABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(c.toUpperCase())] || c).join(""),
+//   (txt) => "★ " + txt.split("").join(" ★ ") + " ★",
+//   (txt) => txt.split("").map((c) => c + "💫").join(""),
+//   (txt) => "💖" + txt + "💖",
+//   (txt) => txt.split("").reverse().join("") + " 🔁",
+// ];
+
+// export default function AllFonts() {
+//   const [text, setText] = useState("");
+//   const [fonts, setFonts] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   // Fetch 50 random Google fonts
+//   useEffect(() => {
+//     const fetchFonts = async () => {
+//       try {
+//         const res = await fetch(
+//           "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyB0N0_example"
+//         );
+//         const data = await res.json();
+//         const randomFonts = data.items
+//           .sort(() => 0.5 - Math.random())
+//           .slice(0, 50)
+//           .map((f) => f.family);
+//         setFonts(randomFonts);
+//       } catch {
+//         setFonts([
+//           "Roboto",
+//           "Open Sans",
+//           "Lobster",
+//           "Merriweather",
+//           "Poppins",
+//           "Raleway",
+//           "Dancing Script",
+//           "Bebas Neue",
+//         ]);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     fetchFonts();
+//   }, []);
+
+//   const resultText = text || "Type something cool ✨";
+
+//   return (
+//     <Container maxWidth="md" sx={{ mt: 4, mb: 5 }}>
+//       <Typography variant="h4" align="center" gutterBottom>
+//         🎨 Fancy Text & Emoji Style Generator
+//       </Typography>
+
+//       <TextField
+//         fullWidth
+//         variant="outlined"
+//         label="Type here..."
+//         value={text}
+//         onChange={(e) => setText(e.target.value)}
+//         sx={{ mb: 4 }}
+//       />
+
+//       {loading ? (
+//         <Box display="flex" justifyContent="center" mt={4}>
+//           <CircularProgress />
+//         </Box>
+//       ) : (
+//         <Box>
+//           {fonts.map((font, i) => (
+//             <Paper
+//               key={i}
+//               elevation={2}
+//               sx={{
+//                 mb: 2,
+//                 p: 2,
+//                 borderRadius: 2,
+//                 textAlign: "center",
+//                 fontSize: "1.5rem",
+//                 fontFamily: font,
+//               }}
+//             >
+//               {emojiSet[Math.floor(Math.random() * emojiSet.length)]}{" "}
+//               {resultText}{" "}
+//               {emojiSet[Math.floor(Math.random() * emojiSet.length)]}
+//             </Paper>
+//           ))}
+
+//           {fancyTransforms.map((fn, i) => (
+//             <Paper
+//               key={"custom-" + i}
+//               elevation={3}
+//               sx={{
+//                 mb: 2,
+//                 p: 2,
+//                 borderRadius: 2,
+//                 textAlign: "center",
+//                 fontSize: "1.5rem",
+//               }}
+//             >
+//               {fn(resultText)}
+//             </Paper>
+//           ))}
+//         </Box>
+//       )}
+//     </Container>
+//   );
+// }
