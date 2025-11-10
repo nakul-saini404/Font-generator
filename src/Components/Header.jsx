@@ -1,9 +1,27 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
+  const location = useLocation(); // 👈 To know which route is active
+
+  // Reusable button styling
+  const getButtonStyle = (path) => {
+    const isActive = location.pathname === path;
+    return {
+      textTransform: "none",
+      borderRadius: 8,
+      fontWeight: 600,
+      transition: "all 0.3s ease",
+      bgcolor: isActive ? "black" : "transparent",
+      color: isActive ? "white" : "black",
+      border: isActive ? "1px solid black" : "1px solid #ccc",
+      "&:hover": {
+        bgcolor: isActive ? "#222" : "#f3f3f3",
+      },
+    };
+  };
 
   return (
     <Box
@@ -16,101 +34,31 @@ export default function Header() {
         justifyContent: "flex-start",
       }}
     >
-      <Button
-        variant="contained"
-        sx={{
-          bgcolor: "black",
-          color: "white",
-          textTransform: "none",
-          borderRadius: 8,
-          "&:hover": { bgcolor: "#333" },
-        }}
-        onClick={() => navigate("/")}
-      >
+      <Button sx={getButtonStyle("/")} onClick={() => navigate("/")}>
         All Fonts
       </Button>
 
-      <Button
-        variant="outlined"
-        sx={{
-          textTransform: "none",
-          color: "black",
-          borderColor: "#ccc",
-          borderRadius: 8,
-          "&:hover": { bgcolor: "#f3f3f3" },
-        }}
-        onClick={() => navigate("/instagram")}
-      >
+      <Button sx={getButtonStyle("/instagram")} onClick={() => navigate("/instagram")}>
         Instagram
       </Button>
 
-      <Button
-        variant="outlined"
-        sx={{
-          textTransform: "none",
-          color: "black",
-          borderColor: "#ccc",
-          borderRadius: 8,
-          "&:hover": { bgcolor: "#f3f3f3" },
-        }}
-        onClick={() => navigate("/glitch")}
-      >
+      <Button sx={getButtonStyle("/glitch")} onClick={() => navigate("/glitch")}>
         𝒢𝓁𝒾𝓉𝒸𝒽
       </Button>
 
-      <Button
-        variant="outlined"
-        sx={{
-          textTransform: "none",
-          color: "black",
-          borderColor: "#ccc",
-          borderRadius: 8,
-          "&:hover": { bgcolor: "#f3f3f3" },
-        }}
-        onClick={() => navigate("/fancy")}
-      >
+      <Button sx={getButtonStyle("/fancy")} onClick={() => navigate("/fancy")}>
         Fancy
       </Button>
 
-      <Button
-        variant="outlined"
-        sx={{
-          textTransform: "none",
-          color: "black",
-          borderColor: "#ccc",
-          borderRadius: 8,
-          "&:hover": { bgcolor: "#f3f3f3" },
-        }}
-        onClick={() => navigate("/discord")}
-      >
+      <Button sx={getButtonStyle("/discord")} onClick={() => navigate("/discord")}>
         𝔻𝕚𝕤𝕔𝕠𝕣𝕕
       </Button>
 
-      <Button
-        variant="outlined"
-        sx={{
-          textTransform: "none",
-          color: "black",
-          borderColor: "#ccc",
-          borderRadius: 8,
-          "&:hover": { bgcolor: "#f3f3f3" },
-        }}
-        onClick={() => navigate("/zalgo")}
-      >
+      <Button sx={getButtonStyle("/zalgo")} onClick={() => navigate("/zalgo")}>
         Zalgo
       </Button>
 
-      <Button
-        variant="outlined"
-        sx={{
-          textTransform: "none",
-          color: "black",
-          borderColor: "#ccc",
-          borderRadius: 8,
-          "&:hover": { bgcolor: "#f3f3f3" },
-        }}
-        onClick={() => navigate("/stylish")}
-      >
+      <Button sx={getButtonStyle("/stylish")} onClick={() => navigate("/stylish")}>
         Stylish
       </Button>
     </Box>

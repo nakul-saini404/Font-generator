@@ -35,7 +35,7 @@ export default function Footer() {
           justifyContent: "center",
         }}
       >
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, md: 6 ,lg:4 }}>
           <Paper
             elevation={0}
             sx={{
@@ -92,7 +92,7 @@ export default function Footer() {
             </Box>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, md: 6 ,lg:6 }}>
           <Paper
             elevation={0}
             sx={{
@@ -101,7 +101,6 @@ export default function Footer() {
               borderRadius: 4,
               p: 3,
               minHeight: "250px",
-              minWidth: "400px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -150,7 +149,7 @@ export default function Footer() {
             </Box>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, md: 6 ,lg:2 }}>
           <Paper
            elevation={0}
             sx={{
@@ -174,7 +173,7 @@ export default function Footer() {
               textAlign="center"
               sx={{ mt: 2 }}
             >
-              Twitter
+              𝒢𝓁𝒾𝓉𝒸𝒽
             </Typography>
             <Box
               sx={{
@@ -185,7 +184,7 @@ export default function Footer() {
               }}
             >
               <Typography variant="body2" color="#999">
-                Twitter Fonts
+                𝒢𝓁𝒾𝓉𝒸𝒽 Fonts
               </Typography>
               <Button
                 size="small"
@@ -204,7 +203,7 @@ export default function Footer() {
             </Box>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, md: 6 ,lg:5 }}>
           <Paper
             elevation={0}
             sx={{
@@ -228,7 +227,7 @@ export default function Footer() {
               textAlign="center"
               sx={{ mt: 2 }}
             >
-              Facebook
+              F𝒶𝓃𝓈𝓎
             </Typography>
             <Box
               sx={{
@@ -239,7 +238,7 @@ export default function Footer() {
               }}
             >
               <Typography variant="body2" color="#bdbdbd">
-                Facebook Fonts
+                Fancy Fonts
               </Typography>
               <Button
                 size="small"
@@ -260,7 +259,7 @@ export default function Footer() {
             </Box>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, md: 6 ,lg:3 }}>
           <Paper
             elevation={0}
             sx={{
@@ -284,7 +283,7 @@ export default function Footer() {
               textAlign="center"
               sx={{ mt: 2 }}
             >
-              F𝒶𝓃𝓈𝓎
+              𝔻𝕚𝕤𝕔𝕠𝕣𝕕
             </Typography>
             <Box
               sx={{
@@ -295,7 +294,7 @@ export default function Footer() {
               }}
             >
               <Typography variant="body2" color="#999">
-                Fancy Fonts
+                Discord Fonts
               </Typography>
               <Button
                 size="small"
@@ -314,7 +313,7 @@ export default function Footer() {
             </Box>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, md: 6 ,lg:4 }}>
           <Paper
             elevation={0}
             sx={{
@@ -338,7 +337,7 @@ export default function Footer() {
               textAlign="center"
               sx={{ mt: 2 }}
             >
-              Z̷͛̿͜a͐ͫͫ͛ͧ͛l̈́̆g͊̅̇ͬ̍̚͜oͣ̐ͣ
+              Z̷͛̿͜a͐ͫͫ͛ͧ͛l̈́̆g͊̅̇ͬ̍̚͜oͣ̐ͣ 
             </Typography>
             <Box
               sx={{
@@ -368,64 +367,8 @@ export default function Footer() {
             </Box>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
-          <Paper
-            elevation={0}
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              borderRadius: 4,
-              p: 3,
-              minHeight: "250px",
-              minWidth: "400px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "auto",
-            }}
-          >
-            <Typography variant="caption" color="#bdbdbd">
-              Font Generator
-            </Typography>
-            <Typography
-              variant="h3"
-              fontWeight={600}
-              textAlign="center"
-              sx={{ mt: 2 }}
-            >
-              Instagram
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                mt: 2,
-              }}
-            >
-              <Typography variant="body2" color="#bdbdbd">
-                Instagram Fonts
-              </Typography>
-              <Button
-                size="small"
-                variant="contained"
-                sx={{
-                  borderRadius: "50px",
-                  backgroundColor: "#f8f1df",
-                  color: "black",
-                  textTransform: "none",
-                  fontSize: "0.7rem",
-                  "&:hover": {
-                    backgroundColor: "#e8e0cf",
-                  },
-                }}
-              >
-                VIEW →
-              </Button>
-            </Box>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        
+        <Grid size={{ xs: 12, md: 6 ,lg:5 }}>
           <Paper
            elevation={0}
             sx={{
@@ -449,7 +392,7 @@ export default function Footer() {
               textAlign="center"
               sx={{ mt: 2 }}
             >
-              SMALL
+               Stylish
             </Typography>
             <Box
               sx={{
@@ -483,7 +426,7 @@ export default function Footer() {
 
       
     </Box>
-    <Box
+    {/* <Box
       sx={{
         backgroundColor: "black",
         color: "#f8f1df",
@@ -518,7 +461,7 @@ export default function Footer() {
       >
         Fancy Font Generator ☞✺✐™
       </Typography>
-      </Box>
+      </Box> */}
     </>
    
   );
