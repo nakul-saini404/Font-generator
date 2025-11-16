@@ -4,19 +4,24 @@ import AllFonts from "./Pages/AllFonts";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import InstagramFonts from "./Pages/InstagramFonts";
+import FancyFonts from "./Pages/FancyFonts";
+import Zalgo from "./Pages/Zalgo";
+import Glitch from "./Pages/Glitch";
+import Discord from "./Pages/Discord";
+import Stylish from "./Pages/Stylish";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Font-generator/">
       <Header />
       <Routes>
         <Route path="/" element={<AllFonts/>} />
         <Route path="/instagram" element={<InstagramFonts/>} />
-        <Route path="/glitch" element={<h2>Glitch Fonts</h2>} />
-        <Route path="/fancy" element={<h2>Fancy Fonts</h2>} />
-        <Route path="/discord" element={<h2>Discord Fonts</h2>} />
-        <Route path="/zalgo" element={<h2>Zalgo Fonts</h2>} />
-        <Route path="/stylish" element={<h2>Stylish Fonts</h2>} />
+        <Route path="/glitch" element={<Glitch/>} />
+        <Route path="/fancy" element={<FancyFonts/>} />
+        <Route path="/discord" element={<Discord/>} />
+        <Route path="/zalgo" element={<Zalgo/>} />
+        <Route path="/stylish" element={<Stylish/>} />
       </Routes>
       <Footer />
     </Router>
