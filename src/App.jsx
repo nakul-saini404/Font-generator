@@ -9,6 +9,9 @@ import Zalgo from "./Pages/Zalgo";
 import Glitch from "./Pages/Glitch";
 import Discord from "./Pages/Discord";
 import Stylish from "./Pages/Stylish";
+import Big from "./Pages/Big";
+import Bold from "./Pages/Bold";
+import Cool from "./Pages/Cool";
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
         <Route path="/discord" element={<Discord/>} />
         <Route path="/zalgo" element={<Zalgo/>} />
         <Route path="/stylish" element={<Stylish/>} />
+        <Route path="/big" element={<Big/>} />
+        <Route path="/bold" element={<Bold/>} />
+        <Route path="/cool" element={<Cool/>} />
       </Routes>
       <Footer />
     </Router>

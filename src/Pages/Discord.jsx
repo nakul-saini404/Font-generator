@@ -252,7 +252,7 @@ export default function DiscordFonts() {
           const output = transform(text);
 
           return (
-            <Grid size={{ xs: 12 }} md={6} key={name}>
+            <Grid size={{ xs: 12 }}  key={name}>
               <Paper
                 elevation={2}
                 sx={{

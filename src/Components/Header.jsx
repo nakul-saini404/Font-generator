@@ -20,6 +20,7 @@ export default function Header() {
       "&:hover": {
         bgcolor: isActive ? "#222" : "#f3f3f3",
       },
+      px: 2,
     };
   };
 
@@ -60,6 +61,45 @@ export default function Header() {
 
       <Button sx={getButtonStyle("/stylish")} onClick={() => navigate("/stylish")}>
         Stylish
+      </Button>
+      <Button sx={getButtonStyle("/big")} onClick={() => navigate("/big")}>
+        ᗷᏆǤ
+      </Button>
+      <Button sx={getButtonStyle("/bold")} onClick={() => navigate("/bold")}>
+        𝐁𝐨𝐥𝐝
+      </Button>
+      <Button sx={getButtonStyle("/cool")} onClick={() => navigate("/cool")}>
+        匚ㄖㄖㄥ
+      </Button>
+      <Button sx={getButtonStyle("/creepy")} onClick={() => navigate("/creepy")}>
+        🅲ᖇ𝒆𝒆ק𝔂 
+      </Button>
+      <Button sx={getButtonStyle("/cursed")} onClick={() => navigate("/cursed")}>
+        ርሁዪነቿጋ
+      </Button>
+      <Button sx={getButtonStyle("/cursive")} onClick={() => navigate("/cursive")}>
+        𝒞𝓊𝓇𝓈𝒾𝓋ℯ
+      </Button>
+      <Button sx={getButtonStyle("/facebook")} onClick={() => navigate("/facebook")}>
+       𝙵𝚊𝚌𝚎𝚋𝚘𝚘𝚔
+      </Button>
+      <Button sx={getButtonStyle("/italic")} onClick={() => navigate("/italic")}>
+        𝘐𝘵𝘢𝘭𝘪𝘤
+      </Button>
+      <Button sx={getButtonStyle("/small")} onClick={() => navigate("/small")}>
+        ꜱᴍᴀʟʟ
+      </Button>
+      <Button sx={getButtonStyle("/strikethrough")} onClick={() => navigate("/strikethrough")}>
+        S̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶ 
+      </Button>
+      <Button sx={getButtonStyle("/underline")} onClick={() => navigate("/underline")}>
+        U͟n͟d͟e͟r͟l͟i͟n͟e͟
+      </Button>
+      <Button sx={getButtonStyle("/upsideDown")} onClick={() => navigate("/upsideDown")}>
+        uʍoꓷ ǝpᴉsdꓵ
+      </Button>
+      <Button sx={getButtonStyle("/weird")} onClick={() => navigate("/weird")}>
+        ⏙ℇ⟟☈⟄
       </Button>
     </Box>
   );

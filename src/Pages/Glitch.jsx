@@ -69,47 +69,37 @@ export default function GlitchFonts() {
       <Typography variant="h3" fontWeight={700} pb={2}>
         Glitch Text Generator
       </Typography>
-{/* 
-      <TextField
-        fullWidth
-        placeholder="Type something..."
-        value={text}
-        
-        sx={{
-          mb: 3,
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": { borderRadius: "20px" },
-          },
-        }}
-      /> */}
+
 
       <TextField
-              fullWidth
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              variant="outlined"
-              color="black"
-              focused
-              placeholder="Type something..."
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "black",
-                    borderRadius: "25px", // Default border
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "black", // On hover
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "black", // When focused
-                  },
-                },
-                margin: "0 auto",
-                backgroundColor: "#fff",
-                //   borderRadius: 4,
-                //   border: "1px solid black",
-                input: { p: 2 },
-              }}
+        fullWidth
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        variant="outlined"
+        color="black"
+        focused
+        placeholder="Type something..."
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "black",
+              borderRadius: "25px", // Default border
+            },
+            "&:hover fieldset": {
+              borderColor: "black", // On hover
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "black", // When focused
+            },
+          },
+          margin: "0 auto",
+          backgroundColor: "#fff",
+          //   borderRadius: 4,
+          //   border: "1px solid black",
+          input: { p: 2 },
+          marginTop: 2,
+          marginBottom: 3,
+        }}
             />
 
       <Grid container spacing={2} flexDirection="column">

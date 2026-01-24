@@ -99,7 +99,7 @@ const generateZalgo = (text, level = "medium") => {
 
 export default function Zalgo() {
   const [text, setText] = useState("");
-  const levels = ["level_1", "level_2", "level_3", "level_4", "level_5", "level_6", "level_7", "level_8", "level_9", "level_10", "level_11", "level_12"];
+  const levels = ["Zalgo Level One", "Zalgo Level Two", "Zalgo Level Three", "Zalgo Level Four", "Zalgo Level Five", "Zalgo Level Six", "Zalgo Level Seven", "Zalgo Level Eight", "Zalgo Level Nime", "Zalgo Level Ten", "Zalgo Level Eleven", "Zalgo Level Tweleve"];
 
   const handleCopy = (txt) => {
     navigator.clipboard.writeText(txt);
@@ -108,9 +108,36 @@ export default function Zalgo() {
 
   return (
     <Box sx={{ p: 4, minHeight: "100vh", backgroundColor: "#fffaf0" }}>
-      <Typography variant="h4" fontWeight={700} pb={3}>
-        Cursed (Zalgo) Text Generator
-      </Typography>
+       <Typography
+              variant="h3"
+              fontWeight={700}
+              textAlign="left"
+              color="text.primary"
+              textTransform={"uppercase"}
+              pb={1}
+            >
+              Zalgo Text Generator
+            </Typography>
+      
+            <Typography
+              variant="h5"
+              fontWeight={700}
+              textAlign="left"
+              color="text.primary"
+              pb={1}
+            >
+             Z̺͐̐a̵͉̅͋̇l̝̙̎́g̬͖̣͉͛ͫͧͅoͣͦͮ͢͠ T̯̳̻̹͈̼͛̒͘͜͜e̴͎͟xͫͪ̓t̷̵̡̰͈̗͂ͣ͒
+            </Typography>
+      
+            <Typography
+              variant="subtitle1"
+              color="text.secondary"
+              textAlign="left"
+              pb={1}
+            >
+              Use our Zalgo text generator to create glitch text for your social profile. Copy and paste the destroyed text to add a creepy and cursed flair to your accounts!
+            </Typography>
+      
 
       <TextField
         fullWidth
@@ -156,7 +183,7 @@ export default function Zalgo() {
                 }}
               >
                 <Box>
-                  <Typography sx={{ fontSize: "1.3rem", pb: 1 }}>
+                  <Typography sx={{ fontSize: "1.3rem", pb: 3 }}>
                     {output || "Type something..."}
                   </Typography>
                   <Typography color="gray">
