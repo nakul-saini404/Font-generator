@@ -12,6 +12,7 @@ import Stylish from "./Pages/Stylish";
 import Big from "./Pages/Big";
 import Bold from "./Pages/Bold";
 import Cool from "./Pages/Cool";
+import CreepyFonts from "./Pages/Creepy";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<AllFonts/>} />
         <Route path="/instagram" element={<InstagramFonts/>} />
         <Route path="/glitch" element={<Glitch/>} />
+        <Route path="/creepy" element={<CreepyFonts/>} />
         <Route path="/fancy" element={<FancyFonts/>} />
         <Route path="/discord" element={<Discord/>} />
         <Route path="/zalgo" element={<Zalgo/>} />
