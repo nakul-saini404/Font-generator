@@ -10,6 +10,7 @@ import Glitch from "./Pages/Glitch";
 import Discord from "./Pages/Discord";
 import Stylish from "./Pages/Stylish";
 import Big from "./Pages/Big";
+import CursedFonts from "./Pages/Cursed";
 import Bold from "./Pages/Bold";
 import Cool from "./Pages/Cool";
 import CreepyFonts from "./Pages/Creepy";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/instagram" element={<InstagramFonts/>} />
         <Route path="/glitch" element={<Glitch/>} />
         <Route path="/creepy" element={<CreepyFonts/>} />
+        <Route path="/cursed" element={<CursedFonts/>} />
         <Route path="/fancy" element={<FancyFonts/>} />
         <Route path="/discord" element={<Discord/>} />
         <Route path="/zalgo" element={<Zalgo/>} />
