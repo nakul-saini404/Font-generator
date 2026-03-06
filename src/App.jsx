@@ -14,6 +14,9 @@ import CursedFonts from "./Pages/Cursed";
 import Bold from "./Pages/Bold";
 import Cool from "./Pages/Cool";
 import CreepyFonts from "./Pages/Creepy";
+import CursiveFonts from "./Pages/Cursive";
+import Facebook from "./Pages/Facebook";
+import Italic from "./Pages/Italic";
 
 function App() {
   return (
@@ -23,7 +26,10 @@ function App() {
         <Route path="/" element={<AllFonts/>} />
         <Route path="/instagram" element={<InstagramFonts/>} />
         <Route path="/glitch" element={<Glitch/>} />
+        <Route path="/facebook" element={<Facebook/>} />
+        <Route path="/italic" element={<Italic/>} />
         <Route path="/creepy" element={<CreepyFonts/>} />
+        <Route path="/cursive" element={<CursiveFonts/>} />
         <Route path="/cursed" element={<CursedFonts/>} />
         <Route path="/fancy" element={<FancyFonts/>} />
         <Route path="/discord" element={<Discord/>} />
