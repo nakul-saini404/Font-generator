@@ -95,7 +95,7 @@ export default function Header() {
       <Button sx={getButtonStyle("/underline")} onClick={() => navigate("/underline")}>
         U͟n͟d͟e͟r͟l͟i͟n͟e͟
       </Button>
-      <Button sx={getButtonStyle("/upsideDown")} onClick={() => navigate("/upsideDown")}>
+      <Button sx={getButtonStyle("/upside-down")} onClick={() => navigate("/upside-down")}>
         uʍoꓷ ǝpᴉsdꓵ
       </Button>
       <Button sx={getButtonStyle("/weird")} onClick={() => navigate("/weird")}>

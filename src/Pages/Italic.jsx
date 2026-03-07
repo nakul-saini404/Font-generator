@@ -201,7 +201,7 @@ export default function Italic() {
         textTransform={"uppercase"}
         pb={1}
       >
-        Facebook Font Generator
+        Italic Text Generator
       </Typography>
 
       <Typography
@@ -211,7 +211,7 @@ export default function Italic() {
         color="text.primary"
         pb={1}
       >
-        𝙵𝚊𝚌𝚎𝚋𝚘𝚘𝚔 𝙵𝚘𝚗𝚝𝚜
+        𝘐𝘵𝘢𝘭𝘪𝘤 𝘛𝘦𝘹𝘵
       </Typography>
 
       <Typography
@@ -220,7 +220,7 @@ export default function Italic() {
         textAlign="left"
         pb={1}
       >
-        Use our Facebook font generator to level up your social media profiles. Copy and paste 276+ cool fonts to upgrade your Facebook, TikTok, and WhatsApp bios!
+        Use our italic text generator to design fancy fonts for your social media accounts. Copy and paste italic, cursive, and script text to style your profile!
       </Typography>
 
       <TextField

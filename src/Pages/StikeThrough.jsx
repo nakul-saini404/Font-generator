@@ -1,0 +1,237 @@
+import React, { useEffect, useState, useMemo } from "react";
+import {
+  Box,
+  Typography,
+  TextField,
+  Grid,
+  Paper,
+  IconButton,
+} from "@mui/material";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+
+const styles = {
+Strikethrough:{
+a:"a̶",b:"b̶",c:"c̶",d:"d̶",e:"e̶",f:"f̶",g:"g̶",h:"h̶",i:"i̶",j:"j̶",
+k:"k̶",l:"l̶",m:"m̶",n:"n̶",o:"o̶",p:"p̶",q:"q̶",r:"r̶",s:"s̶",t:"t̶",
+u:"u̶",v:"v̶",w:"w̶",x:"x̶",y:"y̶",z:"z̶"
+},
+
+ShortStrike:{
+a:"a̵",b:"b̵",c:"c̵",d:"d̵",e:"e̵",f:"f̵",g:"g̵",h:"h̵",i:"i̵",j:"j̵",
+k:"k̵",l:"l̵",m:"m̵",n:"n̵",o:"o̵",p:"p̵",q:"q̵",r:"r̵",s:"s̵",t:"t̵",
+u:"u̵",v:"v̵",w:"w̵",x:"x̵",y:"y̵",z:"z̵"
+},
+
+ SlashStrike:{
+a:"a̷",b:"b̷",c:"c̷",d:"d̷",e:"e̷",f:"f̷",g:"g̷",h:"h̷",i:"i̷",j:"j̷",
+k:"k̷",l:"l̷",m:"m̷",n:"n̷",o:"o̷",p:"p̷",q:"q̷",r:"r̷",s:"s̷",t:"t̷",
+u:"u̷",v:"v̷",w:"w̷",x:"x̷",y:"y̷",z:"z̷"
+},
+
+DoubleStrike:{
+a:"a̶̶",b:"b̶̶",c:"c̶̶",d:"d̶̶",e:"e̶̶",f:"f̶̶",g:"g̶̶",h:"h̶̶",i:"i̶̶",j:"j̶̶",
+k:"k̶̶",l:"l̶̶",m:"m̶̶",n:"n̶̶",o:"o̶̶",p:"p̶̶",q:"q̶̶",r:"r̶̶",s:"s̶̶",t:"t̶̶",
+u:"u̶̶",v:"v̶̶",w:"w̶̶",x:"x̶̶",y:"y̶̶",z:"z̶̶"
+},
+
+HeavyStrike:{
+a:"a̸",b:"b̸",c:"c̸",d:"d̸",e:"e̸",f:"f̸",g:"g̸",h:"h̸",i:"i̸",j:"j̸",
+k:"k̸",l:"l̸",m:"m̸",n:"n̸",o:"o̸",p:"p̸",q:"q̸",r:"r̸",s:"s̸",t:"t̸",
+u:"u̸",v:"v̸",w:"w̸",x:"x̸",y:"y̸",z:"z̸"
+},
+
+DotStrike:{
+a:"a̴",b:"b̴",c:"c̴",d:"d̴",e:"e̴",f:"f̴",g:"g̴",h:"h̴",i:"i̴",j:"j̴",
+k:"k̴",l:"l̴",m:"m̴",n:"n̴",o:"o̴",p:"p̴",q:"q̴",r:"r̴",s:"s̴",t:"t̴",
+u:"u̴",v:"v̴",w:"w̴",x:"x̴",y:"y̴",z:"z̴"
+},
+
+DoubleUnderlineStrike:{
+a:"a̳",b:"b̳",c:"c̳",d:"d̳",e:"e̳",f:"f̳",g:"g̳",h:"h̳",i:"i̳",j:"j̳",
+k:"k̳",l:"l̳",m:"m̳",n:"n̳",o:"o̳",p:"p̳",q:"q̳",r:"r̳",s:"s̳",t:"t̳",
+u:"u̳",v:"v̳",w:"w̳",x:"x̳",y:"y̳",z:"z̳"
+},
+
+UnderlineStrike:{
+a:"a̲",b:"b̲",c:"c̲",d:"d̲",e:"e̲",f:"f̲",g:"g̲",h:"h̲",i:"i̲",j:"j̲",
+k:"k̲",l:"l̲",m:"m̲",n:"n̲",o:"o̲",p:"p̲",q:"q̲",r:"r̲",s:"s̲",t:"t̲",
+u:"u̲",v:"v̲",w:"w̲",x:"x̲",y:"y̲",z:"z̲"
+},
+
+
+Overline:{
+a:"a̅",b:"b̅",c:"c̅",d:"d̅",e:"e̅",f:"f̅",g:"g̅",h:"h̅",i:"i̅",j:"j̅",
+k:"k̅",l:"l̅",m:"m̅",n:"n̅",o:"o̅",p:"p̅",q:"q̅",r:"r̅",s:"s̅",t:"t̅",
+u:"u̅",v:"v̅",w:"w̅",x:"x̅",y:"y̅",z:"z̅"
+},
+
+SiliconDash:{
+a:"a̵",b:"b̵",c:"c̵",d:"d̵",e:"e̵",f:"f̵",g:"g̵",h:"h̵",i:"i̵",j:"j̵",
+k:"k̵",l:"l̵",m:"m̵",n:"n̵",o:"o̵",p:"p̵",q:"q̵",r:"r̵",s:"s̵",t:"t̵",
+u:"u̵",v:"v̵",w:"w̵",x:"x̵",y:"y̵",z:"z̵"
+},
+
+};
+
+const convert = (text, map) => {
+  return text
+    .split("")
+    .map((c) => {
+      const lower = c.toLowerCase();
+      return map[lower] || c;
+    })
+    .join("");
+};
+
+const addDecorations = (text) => {
+  const chars = text.split("");
+  const insertCount = Math.floor(Math.random() * 3) + 1;
+
+  for (let i = 0; i < insertCount; i++) {
+    const symbol =
+      decorativeSet[Math.floor(Math.random() * decorativeSet.length)];
+
+    const pos = Math.floor(Math.random() * (chars.length + 1));
+
+    chars.splice(pos, 0, symbol);
+  }
+
+  return chars.join("");
+};
+
+export default function Strikethrough() {
+  const [text, setText] = useState("");
+
+  const styledFonts = useMemo(() => {
+  return Object.entries(styles).map(([name, map]) => {
+    const unicode = convert(text || "Type something...", map);
+
+    return {
+      name,
+      text: unicode,
+    };
+  });
+}, [text]);
+
+  const handleCopy = (value) => {
+    navigator.clipboard.writeText(value);
+    alert("Copied!");
+  };
+
+  // const items = Array(4).fill(null);
+
+  return (
+    <Box
+      sx={{
+        backgroundColor: "#fffaf0",
+        minHeight: "auto",
+        p: 5,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "left",
+        gap: 1,
+      }}
+    >
+      <Typography
+        variant="h2"
+        fontWeight={800}
+        textAlign="left"
+        color="text.primary"
+        textTransform={"uppercase"}
+        pb={1}
+      >
+        Strikethrough Text Generator
+      </Typography>
+
+      <Typography
+        variant="h3"
+        fontWeight={800}
+        textAlign="left"
+        color="text.primary"
+        pb={1}
+      >
+       S̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶ T̶e̶x̶t̶
+      </Typography>
+
+      <Typography
+        variant="subtitle1"
+        color="text.secondary"
+        textAlign="left"
+        pb={1}
+      >
+        Use our strikethrough text generator to design cool fonts for your Instagram bio. Copy and paste 35+ strikethrough and slash text fonts to style your profile!
+
+      </Typography>
+
+      <TextField
+        fullWidth
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        variant="outlined"
+        color="black"
+        focused
+        placeholder="Type something..."
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "black",
+              borderRadius: "25px", // Default border
+            },
+            "&:hover fieldset": {
+              borderColor: "black", // On hover
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "black", // When focused
+            },
+          },
+          margin: "0 auto",
+          backgroundColor: "#fff",
+          //   borderRadius: 4,
+          //   border: "1px solid black",
+          input: { p: 2 },
+          mb: 3,
+        }}
+      />
+
+      <Grid container spacing={2}>
+        {styledFonts.map((item, i) => (
+          <Grid size={{ xs: 12 }} key={i}>
+            <Paper
+              elevation={2}
+              sx={{
+                p: 2,
+                backgroundColor: "#fff8f0",
+                borderRadius: 3,
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <Box>
+                <Typography
+                  sx={{
+                    fontSize: "1.4rem",
+                    wordBreak: "break-word",
+                  }}
+                >
+                  {item.text}
+                </Typography>
+
+                <Typography variant="caption" color="text.secondary">
+                  {item.name}
+                </Typography>
+              </Box>
+
+              <IconButton
+                onClick={() => handleCopy(item.text)}
+                
+              >
+                <ContentCopyIcon />
+              </IconButton>
+              
+            </Paper>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
+}

@@ -191,8 +191,45 @@ export default function FancyFonts() {
   };
 
   return (
-    <Box sx={{ p: 4, backgroundColor: "#fffaf0", minHeight: "100vh"  }}>
-      <Typography variant="h4" pb={2}>300+ Unicode Fancy Fonts</Typography>
+    <Box sx={{
+        backgroundColor: "#fffaf0",
+        minHeight: "auto",
+        p: 5,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "left",
+        gap: 1,
+      }}>
+<Typography
+        variant="h2"
+        fontWeight={800}
+        textAlign="left"
+        color="text.primary"
+        textTransform={"uppercase"}
+        pb={1}
+      >
+        Fancy Text Generator
+      </Typography>
+
+
+       <Typography
+              variant="h3"
+              fontWeight={800}
+              textAlign="left"
+              color="text.primary"
+              pb={1}
+            >
+              𝐹𝛼𝜂𝜍𝜓 𝛵𝜀𝜒𝜏
+            </Typography>
+      
+            <Typography
+              variant="subtitle1"
+              color="text.secondary"
+              textAlign="left"
+              pb={1}
+            >
+              Use our fancy text generator to design cool text for your social media accounts. Copy and paste 279+ stylish fonts to upgrade your Instagram bio or Discord status!
+            </Typography>
 
             <TextField
                     fullWidth
