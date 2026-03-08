@@ -166,7 +166,7 @@ export default function BoldFontGenerator() {
   };
 
   return (
-    <Box sx={{ p: 4, backgroundColor: "#fffaf0", minHeight: "100vh" }}>
+    <Box sx={{ p: 4, backgroundColor: "#F1F5F9", minHeight: "100vh" }}>
       <Typography
         variant="h3"
         fontWeight={700}
@@ -199,37 +199,33 @@ export default function BoldFontGenerator() {
         style your profile!
       </Typography>
 
-      <TextField
+           <TextField
         fullWidth
         value={text}
         onChange={(e) => setText(e.target.value)}
         variant="outlined"
-        color="black"
-        focused
         placeholder="Type something..."
         sx={{
+          margin: "0 auto",
+          mb: 3,
           "& .MuiOutlinedInput-root": {
+            borderRadius: "25px",
+            backgroundColor: "#fff", // background only inside border
             "& fieldset": {
               borderColor: "black",
-              borderRadius: "25px", // Default border
             },
             "&:hover fieldset": {
-              borderColor: "black", // On hover
+              borderColor: "black",
             },
             "&.Mui-focused fieldset": {
-              borderColor: "black", // When focused
+              borderColor: "black",
             },
           },
-          margin: "0 auto",
-          backgroundColor: "#fff",
-          //   borderRadius: 4,
-          //   border: "1px solid black",
-          input: { p: 2 },
-          marginTop: 2,
-          marginBottom: 3,
+          "& input": {
+            p: 2,
+          },
         }}
       />
-
       <Grid container spacing={2}>
         {FONT_STYLES.map((item) => {
           const out = item.transform(text || "");
@@ -240,7 +236,7 @@ export default function BoldFontGenerator() {
                 sx={{
                   p: 2,
                   borderRadius: 3,
-                  backgroundColor: "#fff8f0",
+                  backgroundColor: "#FFFFFF",
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",

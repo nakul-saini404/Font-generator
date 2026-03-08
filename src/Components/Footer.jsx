@@ -9,7 +9,7 @@ export default function Footer() {
       {" "}
       <Box
         sx={{
-          backgroundColor: "#f8f1df",
+          backgroundColor: "#d9e0e6",
           p: 2,
         }}
       >

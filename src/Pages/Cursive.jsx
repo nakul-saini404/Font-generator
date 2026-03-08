@@ -469,7 +469,7 @@ export default function CursiveFonts() {
   return (
     <Box
       sx={{
-        backgroundColor: "#fffaf0",
+        backgroundColor: "#F1F5F9",
         minHeight: "auto",
         p: 5,
         display: "flex",
@@ -508,35 +508,33 @@ export default function CursiveFonts() {
         Use our cursive text generator to design fancy fonts for your social media accounts. Copy and paste cursive, script, and italic text to style your profile!
       </Typography>
 
-      <TextField
-        fullWidth
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        variant="outlined"
-        color="black"
-        focused
-        placeholder="Type something..."
-        sx={{
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "black",
-              borderRadius: "25px", // Default border
-            },
-            "&:hover fieldset": {
-              borderColor: "black", // On hover
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "black", // When focused
-            },
-          },
-          margin: "0 auto",
-          backgroundColor: "#fff",
-          //   borderRadius: 4,
-          //   border: "1px solid black",
-          input: { p: 2 },
-          mb: 3,
-        }}
-      />
+          <TextField
+       fullWidth
+       value={text}
+       onChange={(e) => setText(e.target.value)}
+       variant="outlined"
+       placeholder="Type something..."
+       sx={{
+         margin: "0 auto",
+         mb: 3,
+         "& .MuiOutlinedInput-root": {
+           borderRadius: "25px",
+           backgroundColor: "#fff", // background only inside border
+           "& fieldset": {
+             borderColor: "black",
+           },
+           "&:hover fieldset": {
+             borderColor: "black",
+           },
+           "&.Mui-focused fieldset": {
+             borderColor: "black",
+           },
+         },
+         "& input": {
+           p: 2,
+         },
+       }}
+     />
 
       <Grid container spacing={2}>
         {styledFonts.map((item, i) => (
@@ -545,7 +543,7 @@ export default function CursiveFonts() {
               elevation={2}
               sx={{
                 p: 2,
-                backgroundColor: "#fff8f0",
+                backgroundColor: "#FFFFFF",
                 borderRadius: 3,
                 display: "flex",
                 justifyContent: "space-between",

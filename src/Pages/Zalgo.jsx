@@ -107,7 +107,7 @@ export default function Zalgo() {
   };
 
   return (
-    <Box sx={{ p: 4, minHeight: "100vh", backgroundColor: "#fffaf0" }}>
+    <Box sx={{ p: 4, minHeight: "100vh", backgroundColor: "#F1F5F9" }}>
        <Typography
               variant="h3"
               fontWeight={700}
@@ -139,33 +139,33 @@ export default function Zalgo() {
             </Typography>
       
 
-      <TextField
-        fullWidth
-        placeholder="Enter your text..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        sx={{
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "black",
-              borderRadius: "25px", // Default border
-            },
-            "&:hover fieldset": {
-              borderColor: "black", // On hover
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "black", // When focused
-            },
-          },
-          margin: "0 auto",
-          backgroundColor: "#fff",
-          //   borderRadius: 4,
-          //   border: "1px solid black",
-          input: { p: 2 },
-          marginTop: 2,
-            marginBottom: 3,
-        }}
-      />
+          <TextField
+       fullWidth
+       value={text}
+       onChange={(e) => setText(e.target.value)}
+       variant="outlined"
+       placeholder="Type something..."
+       sx={{
+         margin: "0 auto",
+         mb: 3,
+         "& .MuiOutlinedInput-root": {
+           borderRadius: "25px",
+           backgroundColor: "#fff", // background only inside border
+           "& fieldset": {
+             borderColor: "black",
+           },
+           "&:hover fieldset": {
+             borderColor: "black",
+           },
+           "&.Mui-focused fieldset": {
+             borderColor: "black",
+           },
+         },
+         "& input": {
+           p: 2,
+         },
+       }}
+     />
 
       <Grid container spacing={2}>
         {levels.map((level, i) => {
@@ -176,7 +176,7 @@ export default function Zalgo() {
               <Paper
                 sx={{
                   p: 2,
-                  backgroundColor: "#fff8f0",
+                  backgroundColor: "#FFFFFF",
                   borderRadius: 3,
                   display: "flex",
                   justifyContent: "space-between",

@@ -65,42 +65,66 @@ export default function GlitchFonts() {
   };
 
   return (
-    <Box sx={{ p: 4, backgroundColor: "#fffaf0", minHeight: "100vh" }}>
-      <Typography variant="h3" fontWeight={700} pb={2}>
-        Glitch Text Generator
-      </Typography>
+    <Box sx={{ p: 4, backgroundColor: "#F1F5F9", minHeight: "100vh" }}>
+      
+            <Typography
+              variant="h2"
+              fontWeight={800}
+              textAlign="left"
+              color="#0F172A"
+              textTransform={"uppercase"}
+              pb={1}
+            >
+Glitch Text Generator
+            </Typography>
+      
+            <Typography
+              variant="h3"
+              fontWeight={800}
+              textAlign="left"
+              color="#0F172A"
+              pb={1}
+            >
+              ₲Ⱡł₮₵Ⱨ ₮ɆӾ₮
+            </Typography>
+      
+            <Typography
+              variant="subtitle1"
+              textAlign="left"
+              color="#0F172A"
+              pb={1}
+            >
+              Use our glitch text generator to design creepy text for your social media accounts. Copy and paste these cursed fonts to add some weirdness to your profiles!
+            </Typography>
 
 
-      <TextField
-        fullWidth
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        variant="outlined"
-        color="black"
-        focused
-        placeholder="Type something..."
-        sx={{
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "black",
-              borderRadius: "25px", // Default border
-            },
-            "&:hover fieldset": {
-              borderColor: "black", // On hover
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "black", // When focused
-            },
-          },
-          margin: "0 auto",
-          backgroundColor: "#fff",
-          //   borderRadius: 4,
-          //   border: "1px solid black",
-          input: { p: 2 },
-          marginTop: 2,
-          marginBottom: 3,
-        }}
-            />
+          <TextField
+       fullWidth
+       value={text}
+       onChange={(e) => setText(e.target.value)}
+       variant="outlined"
+       placeholder="Type something..."
+       sx={{
+         margin: "0 auto",
+         mb: 3,
+         "& .MuiOutlinedInput-root": {
+           borderRadius: "25px",
+           backgroundColor: "#fff", // background only inside border
+           "& fieldset": {
+             borderColor: "black",
+           },
+           "&:hover fieldset": {
+             borderColor: "black",
+           },
+           "&.Mui-focused fieldset": {
+             borderColor: "black",
+           },
+         },
+         "& input": {
+           p: 2,
+         },
+       }}
+     />
 
       <Grid container spacing={2} flexDirection="column">
         {glitchStyles.map((styleFn, i) => {
@@ -111,7 +135,7 @@ export default function GlitchFonts() {
               <Paper
                 sx={{
                    p: 2,
-                  backgroundColor: "#fff8f0",
+                  backgroundColor: "#FFFFFF",
                   borderRadius: 3,
                   display: "flex",
                   justifyContent: "space-between",

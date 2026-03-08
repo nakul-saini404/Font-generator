@@ -903,7 +903,7 @@ export default function AllFonts() {
   return (
     <Box
       sx={{
-        backgroundColor: "#fffaf0",
+        backgroundColor: "#F1F5F9",
         minHeight: "auto",
         p: 5,
         display: "flex",
@@ -916,7 +916,7 @@ export default function AllFonts() {
         variant="h2"
         fontWeight={800}
         textAlign="left"
-        color="text.primary"
+        color="#0F172A"
         textTransform={"uppercase"}
         pb={1}
       >
@@ -927,7 +927,7 @@ export default function AllFonts() {
         variant="h3"
         fontWeight={800}
         textAlign="left"
-        color="text.primary"
+        color="#0F172A"
         pb={1}
       >
         Ϝ⊙ℵ† Ꮆ€ℵ€☈ꍏ†⊙☈
@@ -935,8 +935,8 @@ export default function AllFonts() {
 
       <Typography
         variant="subtitle1"
-        color="text.secondary"
         textAlign="left"
+        color="#0F172A"
         pb={1}
       >
         Copy and paste text from cool and fancy text generators to enhance your
@@ -945,34 +945,32 @@ export default function AllFonts() {
       </Typography>
 
       <TextField
-        fullWidth
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        variant="outlined"
-        color="black"
-        focused
-        placeholder="Type something..."
-        sx={{
-          "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "black",
-              borderRadius: "25px", // Default border
-            },
-            "&:hover fieldset": {
-              borderColor: "black", // On hover
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: "black", // When focused
-            },
-          },
-          margin: "0 auto",
-          backgroundColor: "#fff",
-          //   borderRadius: 4,
-          //   border: "1px solid black",
-          input: { p: 2 },
-          mb: 3,
-        }}
-      />
+  fullWidth
+  value={text}
+  onChange={(e) => setText(e.target.value)}
+  variant="outlined"
+  placeholder="Type something..."
+  sx={{
+    margin: "0 auto",
+    mb: 3,
+    "& .MuiOutlinedInput-root": {
+      borderRadius: "25px",
+      backgroundColor: "#fff", // background only inside border
+      "& fieldset": {
+        borderColor: "black",
+      },
+      "&:hover fieldset": {
+        borderColor: "black",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "black",
+      },
+    },
+    "& input": {
+      p: 2,
+    },
+  }}
+/>
 
       <Grid container spacing={2}>
         {styledFonts.map((item, i) => (
@@ -981,7 +979,7 @@ export default function AllFonts() {
               elevation={2}
               sx={{
                 p: 2,
-                backgroundColor: "#fff8f0",
+                backgroundColor: "#FFFFFF",
                 borderRadius: 3,
                 display: "flex",
                 justifyContent: "space-between",

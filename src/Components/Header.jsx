@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <Box
       sx={{
-        bgcolor: "#fffaf0",
+        bgcolor: "#F1F5F9",
         p: 1.5,
         display: "flex",
         gap: 1,

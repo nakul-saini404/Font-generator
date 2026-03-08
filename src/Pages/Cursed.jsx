@@ -170,7 +170,7 @@ export default function cursedFonts() {
   };
 
   return (
-    <Box sx={{ p: 4, backgroundColor: "#fffaf0", minHeight: "100vh" }}>
+    <Box sx={{ p: 4, backgroundColor: "#F1F5F9", minHeight: "100vh" }}>
       <Typography
         variant="h3"
         fontWeight={700}
@@ -203,37 +203,33 @@ export default function cursedFonts() {
         weirdness to your profiles!
       </Typography>
 
-      <TextField
+           <TextField
         fullWidth
         value={text}
         onChange={(e) => setText(e.target.value)}
         variant="outlined"
-        color="black"
-        focused
         placeholder="Type something..."
         sx={{
+          margin: "0 auto",
+          mb: 3,
           "& .MuiOutlinedInput-root": {
+            borderRadius: "25px",
+            backgroundColor: "#fff", // background only inside border
             "& fieldset": {
               borderColor: "black",
-              borderRadius: "25px", // Default border
             },
             "&:hover fieldset": {
-              borderColor: "black", // On hover
+              borderColor: "black",
             },
             "&.Mui-focused fieldset": {
-              borderColor: "black", // When focused
+              borderColor: "black",
             },
           },
-          margin: "0 auto",
-          backgroundColor: "#fff",
-          //   borderRadius: 4,
-          //   border: "1px solid black",
-          input: { p: 2 },
-          marginTop: 2,
-          marginBottom: 3,
+          "& input": {
+            p: 2,
+          },
         }}
       />
-
       <Grid container spacing={2} flexDirection="column">
         {FONT_LIST.map((font, i) => {
           const output = font.fn(text || font.name);
@@ -243,7 +239,7 @@ export default function cursedFonts() {
               <Paper
                 sx={{
                   p: 2,
-                  backgroundColor: "#fff8f0",
+                  backgroundColor: "#FFFFFF",
                   borderRadius: 3,
                   display: "flex",
                   justifyContent: "space-between",
