@@ -139,6 +139,7 @@ Glitch Text Generator
                   borderRadius: 3,
                   display: "flex",
                   justifyContent: "space-between",
+                  overflow: "hidden",
                 }}
               >
                 <Box>

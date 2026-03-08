@@ -271,8 +271,8 @@ export default function BigFontGenerator() {
 
      <TextField
   fullWidth
-  value={text}
-  onChange={(e) => setText(e.target.value)}
+  value={input}
+  onChange={(e) => setInput(e.target.value)}
   variant="outlined"
   placeholder="Type something..."
   sx={{
