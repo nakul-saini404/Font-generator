@@ -107,7 +107,7 @@ export default function Zalgo() {
   };
 
   return (
-    <Box sx={{ p: 4, minHeight: "100vh", backgroundColor: "#F1F5F9" }}>
+    <Box sx={{ p: 2, minHeight: "100vh", backgroundColor: "#F1F5F9" }}>
        <Typography
               variant="h3"
               fontWeight={700}

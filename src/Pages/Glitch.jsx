@@ -65,7 +65,7 @@ export default function GlitchFonts() {
   };
 
   return (
-    <Box sx={{ p: 4, backgroundColor: "#F1F5F9", minHeight: "100vh" }}>
+    <Box sx={{ p: 2, backgroundColor: "#F1F5F9", minHeight: "100vh" }}>
       
             <Typography
               variant="h2"
