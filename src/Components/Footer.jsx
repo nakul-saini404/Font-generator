@@ -358,7 +358,11 @@ export default function Footer() {
                 variant="h3"
                 fontWeight={600}
                 textAlign="center"
-                sx={{ mt: 2 }}
+                sx={{ mt: 2,
+                   "@media (max-width:500px)": {
+      fontSize: "1.8rem"
+    }
+                 }}
               >
                 Z̷͛̿͜a͐ͫͫ͛ͧ͛l̈́̆g͊̅̇ͬ̍̚͜oͣ̐ͣ
               </Typography>
