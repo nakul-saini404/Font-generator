@@ -364,7 +364,7 @@ export default function Footer() {
     }
                  }}
               >
-                Z̷͛̿͜a͐ͫͫ͛ͧ͛l̈́̆g͊̅̇ͬ̍̚͜oͣ̐ͣ
+                Zalgo
               </Typography>
               <Box
                 sx={{
