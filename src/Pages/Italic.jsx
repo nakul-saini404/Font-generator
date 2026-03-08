@@ -186,7 +186,7 @@ export default function Italic() {
       sx={{
         backgroundColor: "#F1F5F9",
         minHeight: "auto",
-        p: 2,
+        p: 1,
         display: "flex",
         flexDirection: "column",
         alignItems: "left",

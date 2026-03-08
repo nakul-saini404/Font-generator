@@ -142,7 +142,7 @@ Glitch Text Generator
                 }}
               >
                 <Box>
-                  <Typography sx={{ fontSize: "1.2rem", wordWrap: "break-word" }}>
+                  <Typography sx={{ fontSize: "1.2rem", wordWrap: "break-word" ,overflowWrap: "break-word",whiteSpace: "pre-wrap"}}>
                     {glitchText}
                   </Typography>
                   <Typography sx={{ fontSize: ".9rem", color: "gray" }}>

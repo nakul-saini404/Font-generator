@@ -203,7 +203,7 @@ export default function Small() {
       sx={{
         backgroundColor: "#F1F5F9",
         minHeight: "auto",
-        p: 2,
+        p: 1,
         display: "flex",
         flexDirection: "column",
         alignItems: "left",

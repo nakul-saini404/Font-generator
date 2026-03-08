@@ -139,6 +139,11 @@ export default function Strikethrough() {
         color="text.primary"
         textTransform={"uppercase"}
         pb={1}
+          sx={{
+    "@media (max-width:500px)": {
+      fontSize: "1.8rem"
+    }
+  }}
       >
         Strikethrough Text Generator
       </Typography>
