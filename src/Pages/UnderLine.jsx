@@ -204,7 +204,7 @@ export default function Underline() {
         color="text.primary"
         pb={1}
       >
-       U͟n͟d͟e͟r͟l͟i͟n͟e͟ ͟T͟e͟x͟t͟
+       Underline Text
       </Typography>
 
       <Typography

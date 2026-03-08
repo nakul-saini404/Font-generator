@@ -905,7 +905,7 @@ export default function AllFonts() {
       sx={{
         backgroundColor: "#F1F5F9",
         minHeight: "auto",
-        p: 5,
+        p: 2,
         display: "flex",
         flexDirection: "column",
         alignItems: "left",

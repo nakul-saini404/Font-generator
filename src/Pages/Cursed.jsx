@@ -125,7 +125,6 @@ const FONT_LIST = [
   { name: "Bubble", fn: (t) => mapFont(t.toUpperCase(), bubbleMap) },
   { name: "Square", fn: (t) => mapFont(t.toUpperCase(), squareMap) },
 
-  { name: "Zalgo / Corrupt", fn: zalgo },
   { name: "Glitch", fn: glitch },
   { name: "Glitch Gothic", fn: (t) => zalgo(unicodeFont(t, 0x1d504, 0x1d51e)) },
 
@@ -141,8 +140,8 @@ const FONT_LIST = [
   { name: "Lowercase Curse", fn: (t) => t.toLowerCase() },
 
   { name: "Mirror Curse", fn: (t) => reverseText(t.toUpperCase()) },
-  { name: "Random Zalgo", fn: (t) => zalgo(reverseText(t)) },
 
+  
   {
     name: "Haunted Script",
     fn: (t) => unicodeFont(t, 0x1d49c, 0x1d4b6) + " ☾",
@@ -170,7 +169,7 @@ export default function cursedFonts() {
   };
 
   return (
-    <Box sx={{ p: 4, backgroundColor: "#F1F5F9", minHeight: "100vh" }}>
+    <Box sx={{ p: 2, backgroundColor: "#F1F5F9", minHeight: "100vh" }}>
       <Typography
         variant="h3"
         fontWeight={700}
